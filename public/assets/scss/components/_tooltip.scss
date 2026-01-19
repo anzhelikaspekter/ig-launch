@@ -1,0 +1,54 @@
+:root {
+    --tooltip-complete-bg-color: rgba(92, 184, 21, .08);
+    --tooltip-complete-color: #5CB815;
+
+    --tooltip-progress-bg-color: rgba(21, 97, 184, .08);
+    --tooltip-progress-color: #1561b8;
+
+    --tooltip-cancel-bg-color: rgba(184, 21, 21, .08);
+    --tooltip-cancel-color: #b81515;
+
+    --tooltip-secondary-bg-color: #080F20;
+    --tooltip-secondary-border-color: #423E62;
+    --tooltip-secondary-color: #FFFFFF;
+}
+
+@mixin tooltip {
+    width: 100%;
+    max-width: 110px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    white-space: nowrap;
+    &--complete {
+        background-color: var(--tooltip-complete-bg-color);
+        color: var(--tooltip-complete-color);
+    }
+    &--progress {
+        background-color: var(--tooltip-progress-bg-color);
+        color: var(--tooltip-progress-color);
+    }
+    &--cancel {
+        background-color: var(--tooltip-cancel-bg-color);
+        color: var(--tooltip-cancel-color);
+    }
+}
+
+@mixin tooltip-secondary {
+    width: 100%;
+    max-width: 70px;
+    padding: 8px 16px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    border-radius: 50px;
+    background-color: var(--tooltip-secondary-bg-color);
+    color: var(--tooltip-secondary-color);
+    border: 1px solid var(--tooltip-secondary-border-color);
+    white-space: nowrap;
+}

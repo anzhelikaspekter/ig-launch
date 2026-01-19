@@ -1,0 +1,20 @@
+:root {
+    --desc-primary-color: #767E95;
+    --desc-secondary-color: #ffffff;
+    --desc-copyright-color: #69758C;
+}
+
+@mixin desc-primary {
+    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1440 - 320)));
+    color: var(--desc-primary-color);
+}
+
+@mixin desc-secondary {
+    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1440 - 320)));
+    color: var(--desc-secondary-color);
+}
+
+@mixin copyright {
+    font-size: calc(12px + (14 - 12) * ((100vw - 320px) / (1440 - 320)));
+    color: var(--desc-copyright-color);
+}

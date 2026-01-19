@@ -1,0 +1,89 @@
+:root {
+    --history-title-color: #ffffff;
+    --history-desc-color: #767e95;
+    --history-tooltip-bg-color: rgba(0, 204, 179, 0.1);
+    --history-tooltip-color: #00ccb3;
+    --history-dots-bg-color: #2c2c2c;
+    --history-dots-bg-active-color: rgba(89, 0, 245, 1);
+    --history-card-bg-color: #000002;
+    --progressbar-title-color: #9661f1;
+    --progressbar-circle-outline-color: #000002;
+    --progressbar-circle-bg-color: #1b112e;
+}
+
+.history {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+        padding: 50px;
+    }
+    @media screen and (max-width: 767.98px) {
+        padding: 20px;
+    }
+    &__title {
+        @include title-section;
+    }
+    &__desc {
+        font-size: calc(16px + (20 - 16) * ((100vw - 320px) / (1440 - 320)));
+        color: var(--history-desc-color);
+    }
+    &__footer {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        position: relative;
+        padding-bottom: 50px;
+    }
+    &__list {
+        display: flex;
+        width: 100%;
+        min-width: 100%;
+        gap: 20px;
+        transition: transform 0.2s ease-in-out;
+    }
+    &__item {
+        flex: 0 0 100%;
+        width: 100%;
+    }
+}
+
+@keyframes history-line {
+    20% {
+        background-position: 0% 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    80% {
+        background-position: 0% 0;
+    }
+}
+
+@keyframes history-pulse {
+    0%,
+    100% {
+        transform: scale(1.05);
+        opacity: 0.5;
+        box-shadow: 0 0 10px rgba(89, 0, 245, 0.8), 0 0 20px rgba(89, 0, 245, 0.6);
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.75;
+        box-shadow: 0 0 15px rgba(89, 0, 245, 1), 0 0 30px rgba(89, 0, 245, 0.8);
+    }
+}
+
+@keyframes history-move {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}

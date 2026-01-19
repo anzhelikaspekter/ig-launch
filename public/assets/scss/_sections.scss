@@ -1,0 +1,536 @@
+.section {
+    &.header {
+        padding: 20px 10vw;
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            padding: 20px;
+        }
+        @media screen and (max-width: 767.98px) {
+            padding: 20px;
+        }
+    }
+    &.promo {
+        padding: 100px 15vw;
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            padding: 50px 20px;
+        }
+        @media screen and (max-width: 767.98px) {
+            padding: 50px 20px;
+        }
+        #grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 120px);
+            grid-template-rows: repeat(auto-fit, 120px);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .cell {
+            width: 120px;
+            height: 120px;
+            border: 1px solid rgba(39, 40, 55, 0.2);
+            background: transparent;
+        }
+        .ray {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            transition: transform linear, opacity 2s ease-in-out;
+            &.horizontal {
+                height: 2px;
+                width: 120px;
+                background: linear-gradient(to right, transparent, #3f71f6, transparent);
+            }
+            &.vertical {
+                width: 2px;
+                height: 120px;
+                background: linear-gradient(to bottom, transparent, #3f71f6, transparent);
+            }
+        }
+    }
+    &.ticker {
+        padding: 20px;
+    }
+    &.about {
+        padding: 100px 30vw;
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            right: -10.1%;
+            top: 50%;
+            width: 20%;
+            height: 5px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(
+                90deg,
+                rgba(63, 113, 246, 0) 20%,
+                rgba(63, 113, 246, 1),
+                rgba(63, 113, 246, 0) 80%
+            );
+            background-size: 200% 100%;
+            box-shadow: 0px 0px 4px rgba(63, 113, 246, 0.6);
+            transform: translateY(-50%) rotate(90deg);
+            animation: track-line 4s ease-in-out infinite;
+            @media screen and (min-width: 992px) and (max-width: 1239.98px) {
+                width: 20%;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991.98px) {
+                width: 20%;
+                right: -10.2%;
+            }
+            @media screen and (max-width: 767.98px) {
+                width: 30%;
+                right: -15.3%;
+            }
+            @media screen and (max-width: 523.98px) {
+                width: 50%;
+                right: -25.3%;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            padding: 50px 20px;
+        }
+        @media screen and (max-width: 767.98px) {
+            padding: 50px 20px;
+        }
+        & .shadow-right {
+            position: absolute;
+            top: 25%;
+            width: 75px;
+            height: 50%;
+            right: -140px;
+            border-radius: 50%;
+            background: rgba(63, 113, 246, 0.8);
+            filter: blur(80px);
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            z-index: 0;
+            animation: track-pulse 5s infinite ease-in-out;
+            @media screen and (min-width: 992px) and (max-width: 1239.98px) {
+                width: 55px;
+                right: -140px;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991.98px) {
+                width: 55px;
+                right: -140px;
+            }
+            @media screen and (max-width: 767.98px) {
+                width: 55px;
+                right: -140px;
+            }
+            @media screen and (max-width: 523.98px) {
+                width: 55px;
+                right: -140px;
+            }
+        }
+    }
+    &.info {
+        padding: 100px 10vw;
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            left: -15.1%;
+            top: 50%;
+            width: 30%;
+            height: 5px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(
+                90deg,
+                rgba(63, 113, 246, 0) 20%,
+                rgba(63, 113, 246, 1),
+                rgba(63, 113, 246, 0) 80%
+            );
+            background-size: 200% 100%;
+            box-shadow: 0px 0px 4px rgba(63, 113, 246, 0.6);
+            transform: translateY(-50%) rotate(90deg);
+            animation: track-line 4s ease-in-out infinite;
+            @media screen and (min-width: 992px) and (max-width: 1239.98px) {
+                width: 35%;
+                left: -17.6%;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991.98px) {
+                width: 65%;
+                left: -32.7%;
+            }
+            @media screen and (max-width: 767.98px) {
+                width: 80%;
+                left: -40.2%;
+            }
+            @media screen and (max-width: 523.98px) {
+                width: 150%;
+                left: -75.2%;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            padding: 50px 20px;
+        }
+        @media screen and (max-width: 767.98px) {
+            padding: 50px 20px;
+        }
+        & .shadow-left {
+            position: absolute;
+            top: 25%;
+            width: 100px;
+            height: 50%;
+            left: -130px;
+            border-radius: 50%;
+            background: rgba(63, 113, 246, 0.8);
+            filter: blur(100px);
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            z-index: 0;
+            animation: track-pulse 5s infinite ease-in-out;
+            @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            }
+            @media screen and (max-width: 767.98px) {
+                top: 25%;
+            }
+        }
+    }
+    &.ico {
+        padding: 100px 10vw;
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            right: -15.1%;
+            top: 50%;
+            width: 30%;
+            height: 5px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(
+                90deg,
+                rgba(63, 113, 246, 0) 20%,
+                rgba(63, 113, 246, 1),
+                rgba(63, 113, 246, 0) 80%
+            );
+            background-size: 200% 100%;
+            box-shadow: 0px 0px 4px rgba(63, 113, 246, 0.6);
+            transform: translateY(-50%) rotate(90deg);
+            animation: track-line 4s ease-in-out infinite;
+            @media screen and (min-width: 992px) and (max-width: 1239.98px) {
+                width: 35%;
+                right: -17.6%;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991.98px) {
+                width: 65%;
+                right: -32.7%;
+            }
+            @media screen and (max-width: 767.98px) {
+                width: 80%;
+                right: -40.2%;
+            }
+            @media screen and (max-width: 523.98px) {
+                width: 150%;
+                right: -75.2%;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            padding: 50px 20px;
+        }
+        @media screen and (max-width: 767.98px) {
+            padding: 50px 20px;
+        }
+        & .shadow-right {
+            position: absolute;
+            top: 25%;
+            width: 100px;
+            height: 50%;
+            right: -130px;
+            border-radius: 50%;
+            background: rgba(63, 113, 246, 0.8);
+            filter: blur(100px);
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            z-index: 0;
+            animation: track-pulse 5s infinite ease-in-out;
+            @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            }
+            @media screen and (max-width: 767.98px) {
+                top: 25%;
+            }
+        }
+    }
+    &.ipo {
+        padding: 100px 10vw;
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            left: -15.1%;
+            top: 50%;
+            width: 30%;
+            height: 5px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(
+                90deg,
+                rgba(63, 113, 246, 0) 20%,
+                rgba(63, 113, 246, 1),
+                rgba(63, 113, 246, 0) 80%
+            );
+            background-size: 200% 100%;
+            box-shadow: 0px 0px 4px rgba(63, 113, 246, 0.6);
+            transform: translateY(-50%) rotate(90deg);
+            animation: track-line 4s ease-in-out infinite;
+            @media screen and (min-width: 992px) and (max-width: 1239.98px) {
+                width: 35%;
+                left: -17.6%;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991.98px) {
+                width: 65%;
+                left: -32.7%;
+            }
+            @media screen and (max-width: 767.98px) {
+                width: 80%;
+                left: -40.2%;
+            }
+            @media screen and (max-width: 523.98px) {
+                width: 150%;
+                left: -75.2%;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            padding: 50px 20px;
+        }
+        @media screen and (max-width: 767.98px) {
+            padding: 50px 20px;
+        }
+        & .shadow-left {
+            position: absolute;
+            top: 25%;
+            width: 100px;
+            height: 50%;
+            left: -130px;
+            border-radius: 50%;
+            background: rgba(63, 113, 246, 0.8);
+            filter: blur(100px);
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            z-index: 0;
+            animation: track-pulse 5s infinite ease-in-out;
+            @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            }
+            @media screen and (max-width: 767.98px) {
+                top: 25%;
+            }
+        }
+    }
+    &.steps {
+        padding: 100px 10vw;
+        position: relative;
+        overflow: hidden;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -4px;
+            left: 50%;
+            width: 50%;
+            height: 5px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(
+                90deg,
+                rgba(63, 113, 246, 0) 20%,
+                rgba(63, 113, 246, 1),
+                rgba(63, 113, 246, 0) 80%
+            );
+            background-size: 120% 100%;
+            box-shadow: 0px 0px 4px rgba(63, 113, 246, 0.6);
+            transform: translateX(-50%);
+            animation: track-line 4s ease-in-out infinite;
+            @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+                width: 70%;
+                left: 30%;
+                transform: translateX(-30%);
+            }
+            @media screen and (max-width: 767.98px) {
+                width: 100%;
+                left: 15%;
+                transform: translateX(-15%);
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            padding: 50px 20px;
+        }
+        @media screen and (max-width: 767.98px) {
+            padding: 50px 20px;
+        }
+        & .shadow-top {
+            position: absolute;
+            width: 30%;
+            height: 150px;
+            left: calc(50% - 30% / 2);
+            top: -170px;
+            border-radius: 50%;
+            background: rgba(63, 113, 246, 0.8);
+            filter: blur(100px);
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            z-index: 0;
+            animation: track-pulse 5s infinite ease-in-out;
+            @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+                width: 50%;
+                left: calc(50% - 50% / 2);
+            }
+            @media screen and (max-width: 767.98px) {
+                width: 70%;
+                left: 15%;
+            }
+        }
+    }
+    &.history {
+        padding: 100px 10vw;
+        position: relative;
+        overflow: hidden;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 5px;
+            border-radius: 50%;
+            border: none;
+            background: linear-gradient(
+                90deg,
+                rgba(63, 113, 246, 0) 20%,
+                rgba(63, 113, 246, 1),
+                rgba(63, 113, 246, 0) 80%
+            );
+            background-size: 200% 100%;
+            box-shadow: 0px 0px 4px rgba(63, 113, 246, 0.6);
+            transform: translateY(-50%) rotate(90deg);
+            animation: track-line 4s ease-in-out infinite;
+            @media screen and (min-width: 992px) and (max-width: 1239.98px) {
+                width: 35%;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991.98px) {
+                width: 65%;
+            }
+            @media screen and (max-width: 767.98px) {
+                width: 80%;
+            }
+            @media screen and (max-width: 523.98px) {
+                width: 150%;
+            }
+        }
+        &::before {
+            left: -15.1%;
+            @media screen and (min-width: 992px) and (max-width: 1239.98px) {
+                left: -17.6%;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991.98px) {
+                left: -32.7%;
+            }
+            @media screen and (max-width: 767.98px) {
+                left: -40.2%;
+            }
+            @media screen and (max-width: 523.98px) {
+                left: -75.2%;
+            }
+        }
+        &::after {
+            right: -15.1%;
+            @media screen and (min-width: 992px) and (max-width: 1239.98px) {
+                right: -17.6%;
+            }
+            @media screen and (min-width: 768px) and (max-width: 991.98px) {
+                right: -32.7%;
+            }
+            @media screen and (max-width: 767.98px) {
+                right: -40.2%;
+            }
+            @media screen and (max-width: 523.98px) {
+                right: -75.2%;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            padding: 50px 20px;
+        }
+        @media screen and (max-width: 767.98px) {
+            padding: 50px 20px;
+        }
+        & .shadow-right {
+            position: absolute;
+            top: 25%;
+            width: 100px;
+            height: 50%;
+            right: -130px;
+            border-radius: 50%;
+            background: rgba(63, 113, 246, 0.8);
+            filter: blur(100px);
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            z-index: 0;
+            animation: track-pulse 5s infinite ease-in-out;
+            @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            }
+            @media screen and (max-width: 767.98px) {
+                top: 25%;
+            }
+        }
+        & .shadow-left {
+            position: absolute;
+            top: 25%;
+            width: 100px;
+            height: 50%;
+            left: -130px;
+            border-radius: 50%;
+            background: rgba(63, 113, 246, 0.8);
+            filter: blur(100px);
+            transform: matrix(1, 0, 0, -1, 0, 0);
+            z-index: 0;
+            animation: track-pulse 5s infinite ease-in-out;
+            @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            }
+            @media screen and (max-width: 767.98px) {
+                top: 25%;
+            }
+        }
+    }
+    &.footer {
+        padding: 20px 10vw;
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            padding: 20px;
+        }
+        @media screen and (max-width: 767.98px) {
+            padding: 20px;
+        }
+    }
+}
+
+@keyframes track-line {
+    20% {
+        background-position: 0% 0;
+    }
+    50% {
+        background-position: 100% 0;
+    }
+    80% {
+        background-position: 0% 0;
+    }
+}
+
+@keyframes track-pulse {
+    0%,
+    100% {
+        transform: scale(1.05);
+        opacity: 0.5;
+        box-shadow: 0 0 10px rgba(63, 113, 246, 0.8), 0 0 20px rgba(63, 113, 246, 0.6);
+    }
+    50% {
+        transform: scale(1.15);
+        opacity: 0.75;
+        box-shadow: 0 0 15px rgba(63, 113, 246, 1), 0 0 30px rgba(63, 113, 246, 0.8);
+    }
+}

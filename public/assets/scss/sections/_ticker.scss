@@ -1,0 +1,86 @@
+@import "./../components/_logo";
+
+.ticker {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100%;
+        background: linear-gradient(270deg, #010314 0%, rgba(1, 3, 20, 0) 100%);
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        z-index: 3;
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            width: 200px;
+        }
+        @media screen and (max-width: 767.98px) {
+            width: 100px;
+        }
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 300px;
+        height: 100%;
+        background: linear-gradient(270deg, #010314 0%, rgba(1, 3, 20, 0) 100%);
+        z-index: 3;
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            width: 200px;
+        }
+        @media screen and (max-width: 767.98px) {
+            width: 100px;
+        }
+    }
+    &__subtitle {
+        @include subtitle;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+    &__wrap {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+        overflow: hidden;
+        position: relative;
+    }
+    &__content {
+        flex: 0 0 auto;
+        min-width: 100%;
+        height: 35px;
+        display: flex;
+        gap: 20px;
+        animation: ticker 30s linear infinite;
+    }
+    &__logo {
+        width: 150px;
+        height: 30px;
+        flex: 0 0 auto;
+    }
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ticker__wrap,
+    .ticker__content {
+        animation: none !important;
+        transform: none !important;
+    }
+}

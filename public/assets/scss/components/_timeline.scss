@@ -1,0 +1,85 @@
+.timeline {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    position: relative;
+
+    &__step {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        gap: 40px;
+
+        &:not(:last-child) {
+            .timeline__line {
+                height: calc(100% + 40px);
+            }
+        }
+        &:last-child {
+            .timeline__line {
+                height: calc(50% + 40px);
+            }
+        }
+    }
+
+    &__tooltip {
+        @include tooltip-secondary;
+    }
+
+    &__line {
+        position: absolute;
+        top: 15px;
+        left: 90px;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 0;
+        transition: all 0.3s ease-in-out;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -4px;
+            width: 10px;
+            height: 10px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    &__title {
+        @include title-text;
+    }
+    &__desc {
+        @include desc-primary;
+    }
+}
+
+// Анимация луча
+.timeline__line {
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 0;
+        background: #ffffff;
+        animation: beam-move 4s infinite ease-in-out;
+        z-index: 2;
+    }
+}
+
+@keyframes beam-move {
+    0% {
+        height: 0%;
+    }
+    100% {
+        height: 100%;
+    }
+}

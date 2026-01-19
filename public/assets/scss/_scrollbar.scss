@@ -1,0 +1,24 @@
+:root {
+    --scrollbar-track-bg-color: #3D91FF;
+    --scrollbar-thumb-bg-color: #010314;
+}
+
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-bg-color) !important;
+
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-bg-color);
+    border-radius: 20px;
+    border: 3px solid var(--scrollbar-track-bg-color);
+}
+
+html {
+    scrollbar-width: none;
+    scrollbar-color: var(--scrollbar-track-bg-color) var(--scrollbar-thumb-bg-color);
+}

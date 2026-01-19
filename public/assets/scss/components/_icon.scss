@@ -1,0 +1,35 @@
+.icon {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    min-height: 24px;
+    object-fit: contain;
+    display: block;
+    &.btn-arrow {
+        background: url(../img/btn-arrow.svg) no-repeat 50% 50% / 16px;
+    }
+    &.arrow-up-right {
+        background: url(../img/arrow-up-right.svg) no-repeat 50% 50% / contain;
+    }
+    &.drop-up {
+        background: url(../img/drop-up.svg) no-repeat 50% 50% / contain;
+    }
+    &.twitter {
+        background: url(../img/twitter.svg) no-repeat 50% 50% / contain;
+    }
+    &.youtube {
+        background: url(../img/youtube.svg) no-repeat 50% 50% / contain;
+    }
+    &.telegram {
+        background: url(../img/telegram.svg) no-repeat 50% 50% / contain;
+    }
+    &.whatsapp {
+        background: url(../img/whatsapp.svg) no-repeat 50% 50% / contain;
+    }
+    &.scrollbar-left {
+        background: url(../img/scrollbar-left.svg) no-repeat 50% 50% / 14px;
+    }
+    &.scrollbar-right {
+        background: url(../img/scrollbar-right.svg) no-repeat 50% 50% / 14px;
+    }
+}

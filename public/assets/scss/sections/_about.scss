@@ -1,0 +1,21 @@
+.about {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__wrap {
+        width: 100%;
+        max-width: 800px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    &__desc {
+        &--primary {
+            @include desc-primary;
+        }
+        &--secondary {
+            @include desc-secondary;
+        }
+    }
+}

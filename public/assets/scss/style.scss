@@ -1,0 +1,95 @@
+:root {
+    --bg-color: #010314;
+    --font-primary: "Geist", sans-serif;
+}
+
+@import "_outline";
+@import "_scrollbar";
+@import "_sections";
+
+@import "components/_logo";
+@import "components/_btn";
+@import "components/_link";
+@import "components/_title";
+@import "components/_desc";
+@import "components/_icon";
+@import "components/_tooltip";
+@import "components/_pagination";
+@import "components/_timeline";
+
+@import "sections/_header";
+@import "sections/_promo";
+@import "sections/_ticker";
+@import "sections/_about";
+@import "sections/_info";
+@import "sections/_ico";
+@import "sections/_ipo";
+@import "sections/_steps";
+@import "sections/_history";
+@import "sections/_footer";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: calc(14px + (16 - 14) * ((100vw - 320px) / (1440 - 320)));
+    font-family: var(--font-primary);
+    line-height: 1.2;
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
+}
+
+body {
+    background-color: var(--bg-color);
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 550px;
+        left: calc(50% - 100% / 2);
+        top: -500px;
+
+        background: rgba(63, 113, 246, 0.29);
+        opacity: 0.5;
+        filter: blur(250px);
+        z-index: -1;
+    }
+    & > .btn.drop-up {
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+        @media screen and (max-width: 767.98px) {
+            position: fixed;
+            right: 20px;
+            bottom: 50px;
+            z-index: 99;
+        }
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

@@ -1,0 +1,43 @@
+@import "./../components/_nav";
+
+.header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    &__logo {
+        min-width: 200px;
+    }
+    &__btns {
+        min-width: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 20px;
+        @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+            z-index: 9999;
+        }
+        @media screen and (max-width: 767.98px) {
+            z-index: 9999;
+        }
+        @media screen and (max-width: 463.98px) {
+            min-width: auto;
+            z-index: 9999;
+        }
+        & .btn-menu {
+            display: none;
+            @media screen and (min-width: 768px) and (max-width: 1239.98px) {
+                display: flex;
+            }
+            @media screen and (max-width: 767.98px) {
+                display: flex;
+            }
+        }
+        & > .btn.secondary {
+            @media screen and (max-width: 767.98px) {
+                display: none;
+            }
+        }
+    }
+}

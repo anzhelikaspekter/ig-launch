@@ -93,3 +93,7 @@ a {
     white-space: nowrap;
     border: 0;
 }
+
+.is-paused {
+    animation-play-state: paused !important;
+}

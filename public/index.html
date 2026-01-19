@@ -50,18 +50,13 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" as="style"
-        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
         media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap">
     </noscript>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
     <!-- Preloading -->
     <!-- <link rel="preload" as="image" href="assets/img/img_1-320.webp" type="image/webp" fetchpriority="high"> -->
@@ -622,7 +617,8 @@
 
                                 <div class="card__block">
                                     <div class="widget">
-                                        <img class="widget__preview" src="assets/img/widget.svg" width="700" height="290" alt="Market chart preview" loading="lazy" decoding="async">
+                                        <img class="widget__preview" src="assets/img/widget.svg" width="700"
+                                            height="290" alt="Market chart preview" loading="lazy" decoding="async">
                                     </div>
 
                                     <div class="card__info">
@@ -672,7 +668,8 @@
 
                                 <div class="card__block">
                                     <div class="widget">
-                                        <img class="widget__preview" src="assets/img/widget.svg" width="700" height="290" alt="Market chart preview" loading="lazy" decoding="async">
+                                        <img class="widget__preview" src="assets/img/widget.svg" width="700"
+                                            height="290" alt="Market chart preview" loading="lazy" decoding="async">
                                     </div>
 
                                     <div class="card__info">
@@ -723,7 +720,8 @@
 
                                 <div class="card__block">
                                     <div class="widget">
-                                        <img class="widget__preview" src="assets/img/widget.svg" width="700" height="290" alt="Market chart preview" loading="lazy" decoding="async">
+                                        <img class="widget__preview" src="assets/img/widget.svg" width="700"
+                                            height="290" alt="Market chart preview" loading="lazy" decoding="async">
                                     </div>
 
                                     <div class="card__info">
@@ -774,7 +772,8 @@
 
                                 <div class="card__block">
                                     <div class="widget">
-                                        <img class="widget__preview" src="assets/img/widget.svg" width="700" height="290" alt="Market chart preview" loading="lazy" decoding="async">
+                                        <img class="widget__preview" src="assets/img/widget.svg" width="700"
+                                            height="290" alt="Market chart preview" loading="lazy" decoding="async">
                                     </div>
 
                                     <div class="card__info">
@@ -896,6 +895,17 @@
     <script src="assets/js/bg.js" defer></script>
     <script src="assets/js/history.js" defer></script>
     <script src="assets/js/drop-up.js" defer></script>
+    <script>
+        const animated = document.querySelectorAll(".promo__icon, #grid, .ticker__wrap");
+
+        const io = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                e.target.classList.toggle("is-paused", !e.isIntersecting);
+            });
+        }, { threshold: 0.01 });
+
+        animated.forEach(el => io.observe(el));
+    </script>
 </body>
 
 </html>

@@ -97,3 +97,18 @@ a {
 .is-paused {
     animation-play-state: paused !important;
 }
+
+.promo,
+.ticker,
+.history {
+    content-visibility: auto;
+    contain-intrinsic-size: 1000px;
+}
+
+#grid,
+.promo__icon {
+    contain: layout paint;
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    pointer-events: none;
+}

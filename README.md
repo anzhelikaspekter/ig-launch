@@ -97,7 +97,7 @@ Performance optimization was carried out as part of the front-end delivery proce
 
 | Metric            | Before                                   | After                                    | Improvement |
 |-------------------|-------------------------------------------|-------------------------------------------|-------------|
-| **Performance**   | ![](https://img.shields.io/badge/68-orange)  | ![](https://img.shields.io/badge/94-brightgreen)  | ↑ +23        |
+| **Performance**   | ![](https://img.shields.io/badge/68-orange)  | ![](https://img.shields.io/badge/95-brightgreen)  | ↑ +27        |
 | **Accessibility** | ![](https://img.shields.io/badge/83-orange) | ![](https://img.shields.io/badge/100-brightgreen) | ↑ +27       |
 | **Best Practices**| ![](https://img.shields.io/badge/96-brightgreen) | ![](https://img.shields.io/badge/100-brightgreen) | ↑ +4          |
 | **SEO**           | ![](https://img.shields.io/badge/100-brightgreen) | ![](https://img.shields.io/badge/100-brightgreen) | —         |
